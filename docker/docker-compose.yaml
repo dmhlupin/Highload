@@ -66,11 +66,23 @@ services:
             container_name: mariadb
             image: mariadb:latest
             env_file:
-                - ./db/master/.env.master
+                - ./maria/master/.env.master
             ports:
                 - "3306:3306"
             volumes:
-                - ./db/master/.data/mysql:/var/lib/mysql:rw
+                - ./maria/master/.data/mysql:/var/lib/mysql:rw
+            networks:
+                - vk-network
+
+        percona:
+            container_name: percona
+            image: percona:5.7
+            env_file:
+                - ./percona/master/.env.master
+            ports:
+                - "3307:3306"
+#            volumes:
+#                - ./percona/master/.data/mysql:/var/lib/mysql:rw
             networks:
                 - vk-network
 
