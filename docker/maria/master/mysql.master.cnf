@@ -5,7 +5,7 @@ skip-name-resolve
 
 server-id=1
 binlog_format=ROW
-log_bin=mysql-bin.log
+log_bin=vk-bin.log
 binlog_do_db=vk
 
 collation-server=utf8mb4_unicode_ci
