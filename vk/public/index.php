@@ -3,15 +3,16 @@
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
-function req()
-{
-    echo 1;
-    req();
-}
+require_once 'MemcachedService.php';
+require_once 'RedisService.php';
 
-req();
+$cache1 = new MemcachedService();
+$cache2 = new RedisService();
+$cache1->cache();
+$cache2->cache();
+die();
 
-//
+
 //define('LARAVEL_START', microtime(true));
 //
 ///*
